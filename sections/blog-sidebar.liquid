@@ -1,16 +1,8 @@
 <div id="categories-sidebar">
-  {% if blog.all_tags.size > 0 %}
      <p>カテゴリ一覧</p>
      <ul class="categories-sidebar-box">
      {% for tag in blog.all_tags %}
-<!--          {% if tag contains "shopify" or tag contains "test" or tag contains "hoge" %} -->
-            {% if current_tags contains tag %}
-               <li>{{ tag }}</li>
-            {% else %}
-               <li>{{ tag | link_to_tag: tag }}</li>
-            {% endif %}
-<!--         {% endif %} -->
+      <li>{{ tag | link_to_tag: tag }}</li>
      {% endfor %}
      </ul>
- {% endif %}
 </div>
